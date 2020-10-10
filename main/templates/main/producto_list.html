@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h3> Productos </h3>
+    <h3> Nuestra Lista de Productos de Pura Calidad 😊 </h3>
+<h4>¡¡¡A precios de Locura!!! 😱 🤩</h4>
     <ul>
       {% for producto in object_list %}
         <li>
           <a href="{% url 'product-detail' producto.pk %}">
             {{ producto.nombre }}
           </a>
-          - {{ producto.precio }}
+            a S/. {{ producto.precio }}
         </li>
       {% empty %}
         <li>Aun no hay productos disponibles.</li>

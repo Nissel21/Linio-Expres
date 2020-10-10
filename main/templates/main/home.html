@@ -7,6 +7,7 @@
       <a href="{% url 'logout' %}">Cierra Sesion</a>
     </p>
     {% else %}
+<a><font size="3" face="Comic Sans MS,Arial,Verdana">Estás en el lugar correcto 🙌 </font> </a>
     <h3><font size="5" color="green">¡Bienvenido! </font></h3>
     <p>
       <a href="{% url 'login' %}">Inicia Sesion</a> o
@@ -15,14 +16,14 @@
     {% endif %}
 
     <hr>
-    <h5><font size="4" color="yellow" face="Comic Sans MS,Arial,Verdana">Estos son las últimas novedades de Linio &#128526</font></h5>
+    <h5><font size="4" color="brow" face="Comic Sans MS,Arial,Verdana">Estos son las últimas novedades de Linio &#128526</font></h5>
     <ul>
       {% for producto in latest_products %}
-        <li>
+        <li>&#10148;
           <a href="{% url 'product-detail' producto.pk %}">
             {{ producto.nombre }}
           </a>
-          - {{ producto.precio }}
+          S/. {{ producto.precio }}
         </li>
       {% empty %}
         <li>Aun no hay productos disponibles.</li>
@@ -30,6 +31,6 @@
     </ul>
     <hr>
     <ul>
-      <li><a href="{% url 'product-list' %}">Ver Lista de Productos Completa</a></li>
+      <li>👉<a href="{% url 'product-list' %}">Ver Lista de Productos Completa</a></li>
     </ul>
 {% endblock %}
